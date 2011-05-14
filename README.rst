@@ -19,4 +19,4 @@ Necessary features
 * Handle column and row names
 * Ability to apply conversion function to a column (e.g. convert date strings to
   datetime objects)
-
+* Handling of missing data (e.g. NA strings from R)
