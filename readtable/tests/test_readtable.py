@@ -10,7 +10,7 @@ class TestReadTable(unittest.TestCase):
     pass
 
 def case1():
-    example = """A B C D
+    text = """A B C D
 foo 1 1.1111 "1 1"
 bar 2 2.2222 "2 2"
 baz 3 3.3333 "3 3"
@@ -25,7 +25,7 @@ quux 4 4.4444 "4 4"
                                ('C', 'f'), ('D', 'a3')])
 
 def case1_rowlabels():
-    example = """A B C D
+    text = """A B C D
 one foo 1 1.1111 "1 1"
 two bar 2 2.2222 "2 2"
 three baz 3 3.3333 "3 3"
@@ -39,9 +39,18 @@ four quux 4 4.4444 "4 4"
                         dtype=[('A', 'a4'), ('B', 'i'),
                                ('C', 'f'), ('D', 'a3')])
 
+def case2():
+    text = "A\n1 NA 3"
+
+def case3():
+    text = "A\n1.5 NA 3.5"
 
 if __name__ == '__main__':
-    buf = StringIO(example)
-    # gen = np.loadtxt(buf, names=True, dtype=None, delimiter=' ')
-    gen = np.genfromtxt(buf, names=True, dtype=None, delimiter=' ')
+    import nose
+    nose.runmodule(argv=[__file__,'-vvs','-x','--pdb', '--pdb-failure'],
+                   exit=False)
+
+    # buf = StringIO(text)
+    # # gen = np.loadtxt(buf, names=True, dtype=None, delimiter=' ')
+    # gen = np.genfromtxt(buf, names=True, dtype=None, delimiter=' ')
 
