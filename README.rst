@@ -4,7 +4,7 @@ etc. use
 Looking to have functionality as flexible and easy-to-use as R's `read.table`
 function.
 
-pExisting functions
+Existing functions
 ------------------
 * numpy.lib.npyio.{genfromtxt, ndfromtxt}
 * numpy.loadtxt
